@@ -1,0 +1,69 @@
+###############################################################################
+#
+# UPduino3 constraint file (upduino3.pcf)
+#
+# Refer to https://github.com/tinyvision-ai-inc/UPduino-v3.0
+#
+# Chuck Pateros, Alec Henning, Nick Janney, Calvin Michaels, Cristian St. Clair, USD
+# 2022-11-06
+#
+###############################################################################
+
+# Short R16 to use UPduino board provided 12 MHz clock
+set_io -nowarn clk        20
+
+#UPDOWN SIGNAL
+set_io -nowarn -pullup yes STOP   23   
+# https://github.com/YosysHQ/nextpnr/blob/master/docs/ice40.md
+
+set_io -nowarn DEC 47 # Decimal point(s)
+
+set_io -nowarn COLHI 4  # Active HIGH signal for colon
+set_io -nowarn COLLO 37 # Active LOW signal for colon
+
+set_io -nowarn ZERO 25   # Active HIGH reset
+set_io -nowarn LAP 26
+set_io -nowarn LAPDISPLAY 27
+
+
+# Seven-segment display signals
+set_io -nowarn SEG[0]   38 # SEG_A
+set_io -nowarn SEG[1]   34 # SEG_B
+set_io -nowarn SEG[2]   45 # SEG_C
+set_io -nowarn SEG[3]   46 # SEG_D
+set_io -nowarn SEG[4]   2  # SEG_E
+set_io -nowarn SEG[5]   42 # SEG_F
+set_io -nowarn SEG[6]   48 # SEG_G
+
+# 
+set_io -nowarn COMM[3] 3
+set_io -nowarn COMM[2] 43
+set_io -nowarn COMM[1] 36
+set_io -nowarn COMM[0] 28
+
+
+#Debug LEDs
+set_io -nowarn DBG[0]  21
+set_io -nowarn DBG[1]  19 
+set_io -nowarn DBG[2]  18
+set_io -nowarn DBG[3]  11
+
+# Onboard RGB LED
+set_io -nowarn RGB[0]  39 # RGB0 green
+set_io -nowarn RGB[1]  40 # RGB1 blue 
+set_io -nowarn RGB[2]  41 # RBG2 red
+
+# RS232
+set_io -nowarn UART_RX     6 # ser_rx
+set_io -nowarn UART_TX     9 # ser_tx
+
+# SPI Flash
+set_io -nowarn flash_clk  15
+set_io -nowarn flash_csb  16
+set_io -nowarn flash_io0  14
+set_io -nowarn flash_io1  17
+set_io -nowarn flash_io2  12
+set_io -nowarn flash_io3  13
+
+
+
